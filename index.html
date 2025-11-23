@@ -576,7 +576,20 @@
         };
       }
     });
+  // При нажатии "Скопировать" — показываем уведомление в Telegram
+    document.getElementById('copyBtn')?.addEventListener('click', () => {
+      setTimeout(() => {
+        if (window.Telegram?.WebApp) {
+          Telegram.WebApp.showPopup({
+            title: "✅ Успешно",
+            message: "Текст скопирован!",
+            buttons: [{ type: "close" }]
+          });
+        }
+      }, 500);
+    });
   </script>
 </body>
 </html>
+
 
