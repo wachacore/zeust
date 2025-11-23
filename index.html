@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <!-- Telegram Mini App SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script>
+  // Когда приложение загружено — показываем контент
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand(); // разворачиваем на весь экран
+
+  // Опционально: меняем цвет заголовка под тему юзера
+    document.documentElement.style.setProperty('--bg-dark', 
+    Telegram.WebApp.colorScheme === 'dark' ? '#0c0a1e' : '#f0f0ff');
+  </script>
+
+<!-- Иконка закрытия (если нужно) -->
+  <button onclick="Telegram.WebApp.close()" style="position:fixed;top:12px;right:12px;z-index:100;background:#ff00cc;color:white;border:0;border-radius:50%;width:32px;height:32px;">✕</button>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zeus Translator</title>
@@ -565,3 +579,4 @@
   </script>
 </body>
 </html>
+
